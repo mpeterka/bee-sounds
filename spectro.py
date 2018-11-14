@@ -17,10 +17,7 @@ freqs, times, Sx = signal.spectrogram(audio,
                                       scaling='spectrum')
 
 f, ax = plt.subplots(figsize=(9, 6))
-print(np.abs(np.log10(Sx)))
 ax.pcolormesh(times, freqs, np.log10(Sx), cmap='viridis')
 ax.set_ylabel('Frequency [kHz]')
 ax.set_xlabel('Time [s]')
 plt.savefig('target/spectro.png')
-
-# TODO vypsat na vystup dominantni frekvence (FFT?)
